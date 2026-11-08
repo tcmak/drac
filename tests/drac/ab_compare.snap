@@ -1,0 +1,22 @@
+$ drac.py -ab ${DRAC_TMP}/ab_suite
+--- exit 1
+--- stdout
+ERROR: no_baseline::missing_base
+PASS: sync::same
+FAIL: sync::changed
+
+--- ERROR: no_baseline::missing_base ---
+no baseline configured for -ab
+
+--- FAIL: sync::changed ---
+--- baseline
++++ candidate
+@@ -2,4 +2,5 @@
+ --- exit 0
+ --- stdout
+ plan: sync --dry-run --verify
++plan: checksum verify
+ --- stderr
+
+1 passed, 1 failed, 1 errors, 0 recorded
+--- stderr

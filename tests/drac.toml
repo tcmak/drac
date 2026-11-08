@@ -1,0 +1,70 @@
+# Dogfooding suite: drac checking drac.py's own output and diagnostic messages
+script      = "../drac.py"
+interpreter = "python3"
+live        = false
+setup       = 'bash "${DRAC_DIR}/fixtures/make_drac_fixtures.sh"'
+scrub       = [["/tmp/drac_\\w+", "<TMP>"]]
+
+[env]
+COLUMNS = "80"
+LC_ALL  = "C"
+
+[[case]]
+name = "help"
+args = ["-h"]
+safe = true
+
+[[case]]
+name = "bad_cli_exclusive_modes"
+args = ["-r", "-ab", "${DRAC_TMP}/pass_suite"]
+safe = true
+
+[[case]]
+name = "record"
+args = ["-r", "${DRAC_TMP}/record_suite"]
+safe = true
+
+[[case]]
+name = "compare_pass_verbose"
+args = ["-v", "${DRAC_TMP}/pass_suite"]
+safe = true
+
+[[case]]
+name = "compare_diff_and_missing"
+args = ["${DRAC_TMP}/diff_suite"]
+safe = true
+
+[[case]]
+name = "quiet_and_filter"
+args = ["-q", "-k", "deploy::*", "${DRAC_TMP}/diff_suite"]
+safe = true
+
+[[case]]
+name = "ab_compare"
+args = ["-ab", "${DRAC_TMP}/ab_suite"]
+safe = true
+
+[[case]]
+name = "safety_and_runtime_errors"
+args = ["${DRAC_TMP}/errors"]
+safe = true
+
+[[case]]
+name = "config_error_unknown_key"
+args = ["${DRAC_TMP}/bad_unknown.toml"]
+safe = true
+
+[[case]]
+name = "config_error_invalid_toml"
+args = ["${DRAC_TMP}/bad_syntax.toml"]
+safe = true
+
+[[case]]
+name = "config_error_bad_case_name"
+args = ["${DRAC_TMP}/bad_case.toml"]
+safe = true
+
+[[case]]
+name = "coverage"
+args = ["-cov", "-cov-out", "${DRAC_TMP}/cov_out", "${DRAC_TMP}/cov_suite"]
+safe = true

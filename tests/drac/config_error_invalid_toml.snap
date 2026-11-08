@@ -1,0 +1,5 @@
+$ drac.py ${DRAC_TMP}/bad_syntax.toml
+--- exit 2
+--- stdout
+--- stderr
+drac: bad_syntax.toml: not valid TOML: Expected ']]' at the end of an array declaration (at line 2, column 7)

@@ -1,0 +1,21 @@
+$ drac.py -q -k deploy::* ${DRAC_TMP}/diff_suite
+--- exit 1
+--- stdout
+.FF
+
+--- FAIL: deploy::drifted ---
+--- snapshot
++++ actual
+@@ -1,5 +1,5 @@
+ $ backup.sh --dry-run db
+ --- exit 0
+ --- stdout
+-backup mode=--dry-run src=old_db
++backup mode=--dry-run src=db
+ --- stderr
+
+--- FAIL: deploy::unrecorded ---
+no snapshot (<TMP>/diff_suite/deploy/unrecorded.snap); record it with -r
+
+1 passed, 2 failed, 0 errors, 0 recorded
+--- stderr

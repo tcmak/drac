@@ -1,0 +1,25 @@
+$ drac.py -h
+--- exit 0
+--- stdout
+usage: drac.py [-h] [-r | -ab] [-q] [-v] [-k PATTERN] [-cov]
+               [-cov-include GLOB] [-cov-out DIR]
+               files [files ...]
+
+Record and compare dry-run output.
+
+positional arguments:
+  files              .toml case files or directories of them
+
+options:
+  -h, --help         show this help message and exit
+  -r                 record (overwrite) snapshots
+  -ab                compare the baseline script with the script under test
+  -q                 one character per case; details only for failures
+  -v                 also show the command line of each case
+  -k PATTERN         only cases whose file::name matches (fnmatch, substring)
+  -cov               also report which lines of the scripts under test ran
+  -cov-include GLOB  Files to report (path or file-name glob, repeatable;
+                     implies -cov); default: files under the directories of
+                     the scripts under test
+  -cov-out DIR       also write annotated listings to DIR (implies -cov)
+--- stderr

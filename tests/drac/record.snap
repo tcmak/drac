@@ -1,0 +1,7 @@
+$ drac.py -r ${DRAC_TMP}/record_suite
+--- exit 0
+--- stdout
+RECORDED: backup::basic
+RECORDED: backup::full
+0 passed, 0 failed, 0 errors, 2 recorded
+--- stderr

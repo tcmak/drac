@@ -1,0 +1,5 @@
+$ drac.py ${DRAC_TMP}/bad_case.toml
+--- exit 2
+--- stdout
+--- stderr
+drac: bad_case.toml case 1: name 'bad name with spaces' may only use letters, digits, '_', '.', '-'

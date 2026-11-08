@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test & coverage artifacts (note: *.snap files are tracked in version control)
+*.cov
+cov/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor & OS files
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/

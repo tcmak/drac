@@ -1,0 +1,5 @@
+$ drac.py ${DRAC_TMP}/bad_unknown.toml
+--- exit 2
+--- stdout
+--- stderr
+drac: bad_unknown.toml: unknown key(s) scirpt

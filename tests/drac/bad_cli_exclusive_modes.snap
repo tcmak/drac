@@ -1,0 +1,8 @@
+$ drac.py -r -ab ${DRAC_TMP}/pass_suite
+--- exit 2
+--- stdout
+--- stderr
+usage: drac.py [-h] [-r | -ab] [-q] [-v] [-k PATTERN] [-cov]
+               [-cov-include GLOB] [-cov-out DIR]
+               files [files ...]
+drac.py: error: argument -ab: not allowed with argument -r

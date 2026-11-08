@@ -1,0 +1,27 @@
+$ drac.py ${DRAC_TMP}/errors
+--- exit 1
+--- stdout
+ERROR: errors::unsafe_call
+PASS: errors::safe_help
+ERROR: errors::bad_setup
+ERROR: errors::bad_cwd
+ERROR: missing_script::missing
+ERROR: not_executable::perm
+
+--- ERROR: errors::unsafe_call ---
+refusing to run without -n or --dry-run; set safe = true if this case cannot change anything
+
+--- ERROR: errors::bad_setup ---
+setup failed (exit 2): fixture builder failed
+
+--- ERROR: errors::bad_cwd ---
+cwd is not a directory: <TMP>/no_such_dir
+
+--- ERROR: missing_script::missing ---
+script not found: <TMP>/bin/does_not_exist.sh
+
+--- ERROR: not_executable::perm ---
+cannot run <TMP>/bin/not_exec.sh: Permission denied
+
+1 passed, 0 failed, 5 errors, 0 recorded
+--- stderr

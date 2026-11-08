@@ -1,0 +1,15 @@
+$ drac.py -cov -cov-out ${DRAC_TMP}/cov_out ${DRAC_TMP}/cov_suite
+--- exit 0
+--- stdout
+PASS: other::dry
+PASS: py::dry
+PASS: sh::dry
+3 passed, 0 failed, 0 errors, 0 recorded
+
+Coverage (python: exact; bash: approximate)
+bin/cov_tool.py python 7/9 77.8% not run: 8-9
+bin/cov_tool.sh bash   2/3 66.7% not run: 6
+ not measured (only python and bash are supported): bin/unmeasured.pl
+
+Annotated listings (2) in <TMP>/cov_out
+--- stderr

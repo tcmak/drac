@@ -1,0 +1,9 @@
+$ drac.py -v ${DRAC_TMP}/pass_suite
+--- exit 0
+--- stdout
+  backup.sh --dry-run docs
+PASS: backup::basic
+  backup.sh --full --dry-run photos
+PASS: backup::full
+2 passed, 0 failed, 0 errors, 0 recorded
+--- stderr
